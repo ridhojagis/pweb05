@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Form Status Vaksinasi</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body style="background-color: rgb(223, 223, 223); padding: 2rem 0.5rem">
+    <!-- <div class="container text-center">
+        <h1>Form Status Vaksinasi</h1>
+    </div> -->
+    <div class="container" 
+    style="background-color: white; 
+    max-width: 50rem;
+    margin: auto;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    "
+    >
+    <h1 style="text-align: center; color:royalblue; font-weight: bold; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Form Status Vaksinasi</h1>
+      <form
+        name="formVaksinasi"
+        action="#"
+        method="post"
+        onsubmit="return validateForm()"
+      >
+        <div class="form-group mt-5">
+          <label>Nama</label>
+          <input
+            type="text"
+            name="nama"
+            placeholder="Nama Lengkap"
+            class="form-control"
+            required
+            maxlength="40"
+            minlength="3"
+          />
+        </div>
+        <div class="form-group">
+          <label>NRP</label>
+          <input
+            type="number"
+            name="nrp"
+            placeholder="NRP Mahasiswa"
+            class="form-control"
+            required
+            maxlength="14"
+            minlegnth="10"
+          />
+        </div>
+        <div class="form-group">
+          <label>Jurusan</label>
+          <select name="jurusan" class="form-control">
+            <option value="0">Pilih Jurusan</option>
+            <option value="1">Teknik Informatika</option>
+            <option value="2">Teknik Elektro</option>
+            <option value="3">Teknik Biomedik</option>
+            <option value="4">Teknik Komputer</option>
+            <option value="5">Teknologi Informasi</option>
+            <option value="6">Sistem Informasi</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label>Apakah anda sudah vaksin pertama?</label>
+            <select name="vaksin1" class="form-control">
+                <option value="0">Pilih status vaksin</option>
+                <option value="1">Sudah</option>
+                <option value="2">Belum</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Apakah anda sudah vaksin kedua?</label>
+            <select name="vaksin2" class="form-control">
+                <option value="0">Pilih status vaksin</option>
+                <option value="1">Sudah</option>
+                <option value="2">Belum</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <script>
+      function validateForm() {
+        if (document.forms["formVaksinasi"]["nama"].value == "") {
+          alert("Nama tidak boleh kosong");
+          document.forms["formVaksinasi"]["nama"].focus();
+          return false;
+        }
+        if (document.forms["formVaksinasi"]["nrp"].value == "") {
+          alert("NRP Tidak Boleh Kosong");
+          document.forms["formVaksinasi"]["nrp"].focus();
+          return false;
+        }
+        if (document.forms["formVaksinasi"]["jurusan"].selectedIndex < 1) {
+          alert("Pilih Jurusan");
+          document.forms["formVaksinasi"]["jurusan"].focus();
+          return false;
+        }
+        if (document.forms["formVaksinasi"]["vaksin1"].selectedIndex < 1) {
+          alert("Pilih salah satu");
+          document.forms["formVaksinasi"]["vaksin1"].focus();
+          return false;
+        }
+        if (document.forms["formVaksinasi"]["vaksin2"].selectedIndex < 1) {
+          alert("Pilih salah satu");
+          document.forms["formVaksinasi"]["vaksin2"].focus();
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
